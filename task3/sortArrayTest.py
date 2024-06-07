@@ -2,6 +2,7 @@ import time
 import random
 import quickSort as qs
 import mergeSort as ms
+import countingSort as cs
 
 
 def timeSortArray(sortFunction):
@@ -44,3 +45,7 @@ if __name__ == '__main__':
           if testCorrectSortArray(ms.mergeSort)
           else f'Merge sort работает некорректно')
     print(f'Время выполнения Merge sort: {timeSortArray(ms.mergeSort):.2e}')
+    print(f'Counting sort работает корректно'
+          if testCorrectSortArray(cs.countingSort)
+          else f'Counting sort работает некорректно')
+    print(f'Время выполнения Counting sort: {timeSortArray(cs.countingSort):.2e}')
