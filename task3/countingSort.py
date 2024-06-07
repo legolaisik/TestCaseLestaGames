@@ -1,10 +1,7 @@
 def countingSort(arr):
-    counter = {}
+    counter = [0] * (max(arr) + 1 + abs(min(arr)))
 
     for num in arr:
-        if num in counter.keys():
-            counter[num] += 1
-        else:
-            counter[num] = 1
+        counter[num + abs(min(arr))] += 1
 
-    return [num for num, count in counter.items() for i in range(count)]
+    return [num - abs(min(arr)) for num, count in enumerate(counter) for i in range(count)]
